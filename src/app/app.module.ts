@@ -8,8 +8,6 @@ import { FormsComponent } from './components/forms/forms.component';
 import { ButtonComponent } from './components/button/button.component';
 
 /* Angular Material */
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button'
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
@@ -24,8 +22,6 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatSlideToggleModule,
-    MatRadioModule,
     MatButtonModule,
     ReactiveFormsModule,
     FormsModule
