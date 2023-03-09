@@ -1,0 +1,60 @@
+.mat-mdc-radio-button ~ .mat-mdc-radio-button {
+    margin-left: 16px;
+  }
+  
+.forms-title {
+  text-align: center;
+}
+
+.forms-ranking-C {
+  font-size: 30px;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+
+.forms-ranking-B {
+  font-size: 30px;
+  font-weight: bold;
+  color: blue;
+  text-align: center;
+}
+
+.forms-ranking-A {
+  font-size: 30px;
+  font-weight: bold;
+  color: lightgreen;
+  text-align: center;
+}
+
+.forms-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 15rem;
+}
+
+.forms-btns {
+  display: flex;
+  justify-content: center;
+}
+
+.forms-true {
+  display: block;
+}
+
+.forms-false {
+  display: none;
+}
+
+.forms-question {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border: 1px solid lightgrey;
+  padding: 5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

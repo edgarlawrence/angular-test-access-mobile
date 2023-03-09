@@ -1,0 +1,14 @@
+<button
+  mat-button
+  (click)="(clickFunction)"
+  color="primary"
+  *ngIf="isEnabled; else elseBlock"
+>
+  {{ label }}
+</button>
+
+<ng-template #elseBlock
+  ><button mat-button color="accent">
+    {{ label }}
+  </button></ng-template
+>

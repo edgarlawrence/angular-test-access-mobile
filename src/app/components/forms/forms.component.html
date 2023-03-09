@@ -1,0 +1,250 @@
+<div class="forms-container">
+  <div class="forms-title">
+    <h1 text="add">{{ title }}</h1>
+  </div>
+
+  <div class="forms-question" style="text-align: center">
+    <ng-container *ngIf="counter === 0">
+      <p>Apakah Indonesia Bagian Dari Benua Asia?</p>
+      <div class="">
+        <label>
+          <input
+            type="radio"
+            name="options"
+            [(ngModel)]="selectedOption"
+            value="1"
+          />
+          Benar
+        </label>
+      </div>
+
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="options"
+            [(ngModel)]="selectedOption"
+            value="0"
+          />
+          Salah
+        </label>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="counter === 1">
+      <p>Apakah Issac Newton Penemu Mobil?</p>
+      <div class="">
+        <label>
+          <input
+            type="radio"
+            name="options"
+            [(ngModel)]="selectedOption2"
+            value="0"
+          />
+          Benar
+        </label>
+      </div>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="options"
+            [(ngModel)]="selectedOption2"
+            value="1"
+          />
+          Salah
+        </label>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="counter === 2">
+      <p>Apakah Ayam adalah unggas?</p>
+      <div class="">
+        <label>
+          <input
+            type="radio"
+            name="options"
+            [(ngModel)]="selectedOption3"
+            value="1"
+          />
+          Benar
+        </label>
+      </div>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="options"
+            [(ngModel)]="selectedOption3"
+            value="0"
+          />
+          Salah
+        </label>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="counter === 3">
+      <p>Ibukota Amerika Adalah New york</p>
+      <div class="">
+        <label>
+          <input
+            type="radio"
+            name="options"
+            [(ngModel)]="selectedOption4"
+            value="0"
+          />
+          Benar
+        </label>
+      </div>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="options"
+            [(ngModel)]="selectedOption4"
+            value="1"
+          />
+          Salah
+        </label>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="counter === 4">
+      <p>Korea Selatan Adalah Negara Ginseng</p>
+      <div class="">
+        <label>
+          <input
+            type="radio"
+            name="options"
+            [(ngModel)]="selectedOption5"
+            value="1"
+          />
+          Benar
+        </label>
+      </div>
+
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="options"
+            [(ngModel)]="selectedOption5"
+            value="0"
+          />
+          Salah
+        </label>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="counter === 5">
+      <p>Apakah MU Menang Melawan Liverpool Sebanyak 7-0?</p>
+      <div class="">
+        <label>
+          <input
+            type="radio"
+            name="options"
+            [(ngModel)]="selectedOption6"
+            value="0"
+          />
+          Benar
+        </label>
+      </div>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="options"
+            [(ngModel)]="selectedOption6"
+            value="1"
+          />
+          Salah
+        </label>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="counter === 6">
+      <div>
+        <p style="text-align: center; padding-top: 1rem; font-size: 25px">
+          Skor Anda adalah
+        </p>
+        <p style="text-align: center">
+          {{
+            +selectedOption +
+              +selectedOption2 +
+              +selectedOption3 +
+              +selectedOption4 +
+              +selectedOption5 +
+              +selectedOption6
+          }}
+          / 6
+        </p>
+      </div>
+
+      <div style="font-size: 10rem; padding-top: 1rem">
+        <h4>Ranking Anda adalah:</h4>
+        <ng-container
+          *ngIf="
+            +selectedOption +
+              +selectedOption2 +
+              +selectedOption3 +
+              +selectedOption4 +
+              +selectedOption5 +
+              +selectedOption6 <
+            2
+          "
+        >
+          <p class="forms-ranking-C">F</p>
+        </ng-container>
+
+        <ng-container
+          *ngIf="
+            +selectedOption +
+              +selectedOption2 +
+              +selectedOption3 +
+              +selectedOption4 +
+              +selectedOption5 +
+              +selectedOption6 >
+              2 &&
+            +selectedOption +
+              +selectedOption2 +
+              +selectedOption3 +
+              +selectedOption4 +
+              +selectedOption5 +
+              +selectedOption6 <
+              4
+          "
+        >
+          <p class="forms-ranking-B">B</p>
+        </ng-container>
+
+        <ng-container
+          *ngIf="
+            +selectedOption +
+              +selectedOption2 +
+              +selectedOption3 +
+              +selectedOption4 +
+              +selectedOption5 +
+              +selectedOption6 >
+            4
+          "
+        >
+          <p class="forms-ranking-A">A</p>
+        </ng-container>
+      </div>
+
+      <div style="text-align: center">
+        <app-button label="Coba Lagi" (click)="resetStep()"> </app-button>
+      </div>
+    </ng-container>
+  </div>
+
+  <ng-container *ngIf="counter < 6; else elseBlock">
+    <div class="forms-btns">
+      <app-button label="Prev" (click)="goToPreviousStep()"> </app-button>
+      <app-button label="Next" (click)="goToNextStep()" [isEnabled]="true">
+      </app-button>
+    </div>
+  </ng-container>
+
+  <ng-template #elseBlock></ng-template>
+</div>
