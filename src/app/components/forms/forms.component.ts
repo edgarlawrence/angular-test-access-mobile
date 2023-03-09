@@ -18,11 +18,6 @@ export class FormsComponent {
 
   title: string = 'This is an Mini Quiz Test'
   counter = 0
-  score = 0
-
-  stringToNumber(input: number) {
-    this.score = Number(input)
-  }
 
   goToNextStep() {
     this.counter++;
@@ -40,7 +35,6 @@ export class FormsComponent {
 
   resetStep() {
       this.counter = 0
-      this.score = 0
       this.selectedOption = 0
       this.selectedOption2 = 0
       this.selectedOption3 = 0
